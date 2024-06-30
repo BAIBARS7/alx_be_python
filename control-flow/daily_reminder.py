@@ -22,7 +22,7 @@ try:
     # Printing the customized reminder
     print(reminder)
 
-except SyntaxError:
+except NameError:
 # Fallback for Python versions that do not support match statement
     if priority.lower() == 'high':
         reminder = f"High priority task: '{task}'"
