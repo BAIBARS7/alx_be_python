@@ -1,9 +1,9 @@
 # Prompting for task details
 task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ")
 time_bound = input("Is it time-bound? (yes/no): ")
+priority = input("Priority (high/medium/low): ")
 
-# Processing the task based on priority and time sensitivity using match case
+# Processing the task based on priority and time sensitivity
 try:
     match priority.lower():
         case 'high':
@@ -15,7 +15,7 @@ try:
         case _:
             reminder = f"Task with unknown priority: '{task}'"
 
-    # Modifying reminder based on time-bound status
+    # Modifying reminder based on time-bound status using if statement
     if time_bound.lower() == 'yes':
         reminder += " that requires immediate attention today!"
 
@@ -23,7 +23,7 @@ try:
     print(reminder)
 
 except NameError:
-# Fallback for Python versions that do not support match statement
+    # Fallback for Python versions that do not support match statement
     if priority.lower() == 'high':
         reminder = f"High priority task: '{task}'"
     elif priority.lower() == 'medium':
@@ -33,7 +33,7 @@ except NameError:
     else:
         reminder = f"Task with unknown priority: '{task}'"
 
-    # Modifying reminder based on time-bound status
+    # Modifying reminder based on time-bound status using if statement
     if time_bound.lower() == 'yes':
         reminder += " that requires immediate attention today!"
 
