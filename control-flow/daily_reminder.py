@@ -1,14 +1,14 @@
 # Prompting for task details
-task = input("Enter task description: ")
-priority = input("Enter task priority (high, medium, low): ")
-time_bound = input("Is the task time-bound? (yes or no): ")
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ")
+time_bound = input("Is it time-bound? (yes/no): ")
 
 # Processing the task based on priority and time sensitivity
-if priority == 'high':
+if priority.lower() == 'high':
     reminder = f"High priority task: '{task}'"
-elif priority == 'medium':
+elif priority.lower() == 'medium':
     reminder = f"Medium priority task: '{task}'"
-elif priority == 'low':
+elif priority.lower() == 'low':
     reminder = f"Low priority task: '{task}'"
 else:
     reminder = f"Task with unknown priority: '{task}'"
