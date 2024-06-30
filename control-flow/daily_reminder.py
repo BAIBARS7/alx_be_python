@@ -1,42 +1,25 @@
-# Prompt for task details
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ")
-time_bound = input("Is it time-bound? (yes/no): ")
+def main():
+  # Prompt for task and priority
+  task = input("Enter your task: ")
+  priority = input("Priority (high/medium/low): ").lower()
+  time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-print("\nReminder:")
-# Process the task based on priority and time sensitivity
-try:
-    match priority.lower():
-        case 'high':
-            reminder = f"'{task}' is a high priority task"
-        case 'medium':
-            reminder = f"'{task}' is a medium priority task"
-        case 'low':
-            reminder = f"'{task}' is a low priority task"
-        case _:
-            reminder = f"'{task}' has an unknown priority"
+  # Reminder message based on priority
+  reminder = f"'{task}' is a {priority} priority task. "
+  match priority:
+    case "high":
+      reminder += "Don't forget to complete it!"
+    case "medium":
+      reminder += "Consider completing it when you have a chance."
+    case "low":
+      reminder += "Consider completing it when you have free time."
 
-    # Modify reminder based on time-bound status using if statement
-    if time_bound.lower() == 'yes':
-        reminder += " that requires immediate attention today!"
+  # Add urgency message for time-bound tasks
+  if time_bound == "yes":
+    reminder += " It requires immediate attention today!"
 
-    # Print the customized reminder
-    print(f"Reminder: {reminder}")
+  # Print the reminder
+  print(reminder)
 
-except NameError:
-    # Fallback for Python versions that do not support match statement
-    if priority.lower() == 'high':
-        reminder = f"'{task}' is a high priority task"
-    elif priority.lower() == 'medium':
-        reminder = f"'{task}' is a medium priority task"
-    elif priority.lower() == 'low':
-        reminder = f"'{task}' is a low priority task"
-    else:
-        reminder = f"'{task}' has an unknown priority"
-
-    # Modify reminder based on time-bound status using if statement
-    if time_bound.lower() == 'yes':
-        reminder += " that requires immediate attention today!"
-
-    # Print the customized reminder
-    print(f"Reminder: {reminder}")
+if __name__ == "__main__":
+  main()
