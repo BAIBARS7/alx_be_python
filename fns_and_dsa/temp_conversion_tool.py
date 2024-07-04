@@ -13,7 +13,7 @@ def convert_to_celsius(fahrenheit):
     Returns:
     - float: The temperature converted to Celsius.
     """
-    return (fahrenheit - FREEZING_POINT_DIFFERENCE) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
     """
@@ -25,7 +25,7 @@ def convert_to_fahrenheit(celsius):
     Returns:
     - float: The temperature converted to Fahrenheit.
     """
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FREEZING_POINT_DIFFERENCE
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
     try:
