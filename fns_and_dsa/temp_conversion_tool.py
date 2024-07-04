@@ -1,6 +1,6 @@
 # Define global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5  # Note: Exact match of "9/5" without spaces
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 FREEZING_POINT_DIFFERENCE = 32
 
 def convert_to_celsius(fahrenheit):
@@ -42,4 +42,7 @@ def main():
         converted_temp = convert_to_celsius(temperature)
         print(f"{temperature}°F is {converted_temp}°C")
     else:
-        print("Invalid unit. Please enter 'C' for Celsius or 'F'
+        print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+
+if __name__ == "__main__":
+    main()
